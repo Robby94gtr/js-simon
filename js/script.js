@@ -19,14 +19,22 @@ timer = setInterval(() => {
 },1000)
 
 setTimeout(() => {
-    clearInterval(timer);
-    numRandomList.innerHTML = '';
-    instructions.innerHTML = 'Inserisci i numeri memorizzati, anche in ordine casuale';
-    answersForm.classList.remove("d-none")
-},5000)
+    clearInterval(timer)}
+    ,10000)
 
-//  Creo l'array che conterrà i numeri casuali
-const numRandom = [''];
+
+//  Creo lla funzione per creare array di numeri casuali
+function generateRandomNum(){
+    let ArrayNumRandom = [];
+    for (let i=0; i< 5; i++){
+        ArrayNumRandom.push(Math.floor(Math.random() * 100) +1)
+    }
+
+    return ArrayNumRandom
+    
+}
+
+let numRandom = generateRandomNum()
 
 // dichiaro l'elemento della lista vuoto
  
