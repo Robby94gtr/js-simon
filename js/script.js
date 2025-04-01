@@ -9,13 +9,12 @@ const numUser = document.querySelector('input');
 // dichiaro il timer
 let timer;
 
-// gestisco il timer
 let count = 1;
-numRandomList.innerText = count;
+countdown.innerText = count;
 
 timer = setInterval(() => {
     count++;
-    numRandomList.innerText = count;
+    countdown.innerText = count;
 },1000)
 
 setTimeout(() => {
