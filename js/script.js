@@ -20,21 +20,21 @@ timer = setInterval(() => {
 },1000)
 
 setTimeout(() => {
-    clearInterval(timer);
-     numRandomList.innerHTML = '';
-     instructions.innerHTML = 'Inserisci i numeri memorizzati, anche in ordine casuale';
-     answersForm.classList.remove("d-none")
- },10000)
+clearInterval(timer);
+ numRandomList.innerHTML = '';
+ instructions.innerHTML = 'Inserisci i numeri memorizzati, anche in ordine casuale';
+ answersForm.classList.remove("d-none")
+},10000)
 
 
 //  Creo lla funzione per creare array di numeri casuali
 function generateRandomNum(){
-    let ArrayNumRandom = [];
-    for (let i=0; i< 5; i++){
-        ArrayNumRandom.push(Math.floor(Math.random() * 50) +1)
-    }
+let ArrayNumRandom = [];
+for (let i=0; i< 5; i++){
+    ArrayNumRandom.push(Math.floor(Math.random() * 50) +1)
+}
 
-    return ArrayNumRandom
+return ArrayNumRandom
     
 }
 
@@ -46,9 +46,23 @@ let items = '';
  
 // ciclo l'array
 for (let i=0; i<numRandom.length; i++){
-    // creo il list items concatenandolo alla variabile item
-    items += `<li>${numRandom[i]}</li>`
+// creo il list items concatenandolo alla variabile item
+items += `<li>${numRandom[i]}</li>`
 }
 
 // assegno a numRandomList
 numRandomList.innerHTML = items
+
+button.addEventListener('click', function(event){
+event.preventDefault();
+
+// prendo i valori inseriri dall'utente e li inserisco nell'array
+let userNumbers = [];
+for (let i=0; i<numUser.length; i++){
+    userNumbers.push(parseInt(numUser[i].value));
+}
+
+   
+
+    
+})
