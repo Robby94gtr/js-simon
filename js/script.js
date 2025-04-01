@@ -24,7 +24,7 @@ clearInterval(timer);
  numRandomList.innerHTML = '';
  instructions.innerHTML = 'Inserisci i numeri memorizzati, anche in ordine casuale';
  answersForm.classList.remove("d-none")
-},10000)
+},5000)
 
 
 //  Creo lla funzione per creare array di numeri casuali
@@ -53,7 +53,7 @@ items += `<li>${numRandom[i]}</li>`
 // assegno a numRandomList
 numRandomList.innerHTML = items
 
-button.addEventListener('click', function(event){
+answersForm.addEventListener('submit', function(event){
 event.preventDefault();
 
 // prendo i valori inseriri dall'utente e li inserisco nell'array
@@ -62,7 +62,17 @@ for (let i=0; i<numUser.length; i++){
     userNumbers.push(parseInt(numUser[i].value));
 }
 
-   
-
-    
-})
+let correctNum = [];
+    for (let i=0; i<numRandom.length; i++){
+        for(let j=0; j<userNumbers.length; j++){
+            if(numRandom[i] === userNumbers[j]){
+                 correctNum.push(numRandom[i])
+                 
+            }
+             
+        }
+    }
+ 
+     message.innerHTML=`Hai indovinato ${correctNum.length} numeri: ${correctNum.join(', ')}`;
+ 
+ })
