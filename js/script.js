@@ -5,6 +5,8 @@ const numRandomList = document.getElementById('numbers-list');
 const message = document.getElementById('message');
 const button = document.querySelector('button');
 const numUser = document.querySelector('input');
+const instructions = document.getElementById('instructions')
+const answersForm = document.getElementById('answers-form')
 
 // dichiaro il timer
 let timer;
