@@ -4,7 +4,7 @@ const countdown = document.getElementById('countdown');
 const numRandomList = document.getElementById('numbers-list');
 const message = document.getElementById('message');
 const button = document.querySelector('button');
-const numUser = document.querySelector('input');
+const numUser = document.querySelectorAll('#input-group input');
 const instructions = document.getElementById('instructions')
 const answersForm = document.getElementById('answers-form')
 
@@ -20,15 +20,18 @@ timer = setInterval(() => {
 },1000)
 
 setTimeout(() => {
-    clearInterval(timer)}
-    ,10000)
+    clearInterval(timer);
+     numRandomList.innerHTML = '';
+     instructions.innerHTML = 'Inserisci i numeri memorizzati, anche in ordine casuale';
+     answersForm.classList.remove("d-none")
+ },10000)
 
 
 //  Creo lla funzione per creare array di numeri casuali
 function generateRandomNum(){
     let ArrayNumRandom = [];
     for (let i=0; i< 5; i++){
-        ArrayNumRandom.push(Math.floor(Math.random() * 100) +1)
+        ArrayNumRandom.push(Math.floor(Math.random() * 50) +1)
     }
 
     return ArrayNumRandom
